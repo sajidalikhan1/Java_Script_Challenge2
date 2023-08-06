@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Recieve and Return an array</title>
+</html>
+<body>
+  <!-- 2.Create a function that receives an array of numbers and returns an array containing only the positive numbers -->
+  <script>
+    function getPositiveNumbers(numbersArray) {
+      // Check if the input is an array
+      if (!Array.isArray(numbersArray)) {
+        throw new Error("Input must be an array.");
+      }
+
+      // Use the filter method to create a new array with positive numbers only
+      const positiveNumbers = numbersArray.filter((num) => num > 0);
+
+      // Return the array containing only positive numbers
+      return positiveNumbers;
+    }
+    const numbers = [-2, 5, -10, 15, 0, 25, -3, 35, 89];
+    const positiveNumbers = getPositiveNumbers(numbers);
+    console.log("Positive Numbers:", positiveNumbers); // Output: Positive Numbers: [5, 15, 25, 35, 89]
+  </script>
+</body>

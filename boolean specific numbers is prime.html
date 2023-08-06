@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boolean specific number is prime</title>
+  </head>
+  <body>
+    <!-- 6.Create a function that will return a Boolean specifying if a number is prime -->
+    <script>
+      function isPrime(number) {
+        // Check if the input is a positive integer greater than 1
+        if (
+          typeof number !== "number" ||
+          number <= 1 ||
+          !Number.isInteger(number)
+        ) {
+          return false;
+        }
+
+        // 2 and 3 are prime numbers
+        if (number === 2 || number === 3) {
+          return true;
+        }
+
+        // Check if the number is divisible by any integer from 2 up to its square root
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+          if (number % i === 0) {
+            return false;
+          }
+        }
+
+        // If no divisors were found, the number is prime
+        return true;
+      }
+
+      const num1 = 7;
+      console.log(isPrime(num1)); // Output: true
+
+      const num2 = 15;
+      console.log(isPrime(num2)); // Output: false
+    </script>
+  </body>
+</html>

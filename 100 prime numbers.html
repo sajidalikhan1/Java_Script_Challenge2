@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>100 prime numbers</title>
+  </head>
+  <body>
+    <!-- 8.print the first 100 prime numbers -->
+    <script>
+      // Function to check if a number is prime
+      function isPrime(number) {
+        if (number < 2) {
+          return false;
+        }
+        for (let i = 2; i * i <= number; i++) {
+          if (number % i === 0) {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      // Function to print the first 'n' prime numbers
+      function first100primes(n) {
+        let count = 0;
+        // Start checking for prime numbers from 2
+        let i = 2;
+
+        // Loop until 'n' prime numbers are found
+        while (count < n) {
+          // Check if 'i' is a prime number using the 'isPrime' function
+          if (isPrime(i)) {
+            // Print the prime number
+            console.log(i);
+            count++;
+          }
+          i++;
+        }
+      }
+
+      let range1 = 100;
+      // Calling the 'first100primes' function
+      first100primes(range1);
+    </script>
+  </body>
+</html>

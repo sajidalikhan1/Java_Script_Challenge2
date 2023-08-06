@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>n primes</title>
+  </head>
+  <body>
+    <!-- 9.Create a function that will return in an array the first "nPrimes" prime numbers greater than a particular number "startAt"
+ -->
+    <script>
+      // Function to check if a number is prime
+      const isPrime = (number) => {
+        if (number < 2) {
+          return false;
+        }
+        for (let i = 2; i * i <= number; i++) {
+          if (number % i === 0) {
+            return false;
+          }
+        }
+        return true;
+      };
+
+      // Function to find 'n' prime numbers greater than 'startAt'
+      function findPrimesGreaterthan(startAt, n) {
+        // Array to store the prime numbers
+        let primes = [];
+        // Start checking numbers greater than 'startAt'
+        let currentPrime = startAt;
+
+        // Loop until 'n' prime numbers are found
+        while (primes.length < n) {
+          // Check if currentPrime is prime using isPrime function
+          if (isPrime(currentPrime)) {
+            // Add 'currentPrime' to the 'primes' array
+            primes.push(currentPrime);
+          }
+          currentPrime++;
+        }
+
+        return primes;
+      }
+      // Define the number greater than which we want to find prime numbers
+      let startingnumber = 10;
+      // Define the number of prime numbers we want to find
+      let range2 = 5;
+      // Calling the function
+      let primeArray = findPrimesGreaterthan(startingnumber, range2);
+      console.log(primeArray);
+    </script>
+  </body>
+</html>

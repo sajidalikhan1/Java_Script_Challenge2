@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>max num of arrays</title>
+  </head>
+  <body>
+    <!-- 3.Find the maximum number in an array of numbers -->
+    <script>
+      function findMaxNumber(numbersArray) {
+        if (!Array.isArray(numbersArray) || numbersArray.length === 0) {
+          throw new Error("Input must be a non-empty array.");
+        }
+
+        // Assume the first element as the maximum number
+        let maxNumber = numbersArray[0];
+
+        // Loop through the array to compare each element with the current maxNumber
+        for (let i = 1; i < numbersArray.length; i++) {
+          // If the current element is greater than the current maxNumber, update maxNumber
+          if (numbersArray[i] > maxNumber) {
+            maxNumber = numbersArray[i];
+          }
+        }
+
+        return maxNumber;
+      }
+
+      const numbers = [10, 35, 2, , 1023, 500, 78, 46, 100];
+      const maxNumber = findMaxNumber(numbers);
+      console.log("Maximum Number:", maxNumber); // Output: Maximum Number: 1023
+    </script>
+  </body>
+</html>

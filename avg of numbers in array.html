@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Average of array</title>
+  </head>
+  <body>
+    <!-- 1. Calculate the average of the numbers in an arrays of numbers. -->
+    <script>
+      function calculateAverage(numbersArray) {
+        // check if the input is an array
+        if (!Array.isArray(numbersArray) || numbersArray.length == 0) {
+          return 0;
+        }
+        const sum = numbersArray.reduce((acc, num) => acc + num, 0);
+        const average = sum / numbersArray.length; //Used to calculate average
+        return average;
+      }
+
+      const numbers = [40, 50, 90, 20, 60, 90, 290, 23, 46, 90];
+      const average = calculateAverage(numbers);
+      console.log("Average :", average); //print average
+    </script>
+  </body>
+</html>

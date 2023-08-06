@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>rotate an array</title>
+  </head>
+  <body>
+    <!-- 10.Rotate an array to the left 1 position -->
+    <script>
+      function rotateLeftByPositions(arr, positions) {
+        const rotations = positions % arr.length; // Effective number of rotations (handles cases where positions > array length)
+        for (let i = 0; i < rotations; i++) {
+          const firstElement = arr.shift(); // Remove the first element from the array
+          arr.push(firstElement); // Add the first element to the end of the array
+        }
+        return arr;
+      }
+
+      // Example usage:
+      let originalArray = [1, 2, 3, 4, 5, 6];
+      let positionsToRotate = 1;
+      let rotatedArray = rotateLeftByPositions(
+        originalArray,
+        positionsToRotate
+      );
+      console.log(rotatedArray);
+    </script>
+  </body>
+</html>

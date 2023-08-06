@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sum of digits of positive numbers</title>
+  </head>
+  <body>
+    <!-- 7.Calculate the sum of digits of a positive integer number -->
+    <script>
+      function sumOfInteger(n) {
+        let sum = 0;
+
+        // Check if the number is positive
+        if (n > 0) {
+          // Convert the number to a string to access individual digits
+          n = n.toString();
+
+          // Loop through each character in the number string
+          for (let i = 0; i < n.length; i++) {
+            // Convert the digit character back to a number and add it to 'sum'
+            sum += Number(n[i]);
+          }
+        }
+
+        return sum;
+      }
+
+      let integer = 123456789;
+      // Calling the function to calculate the sum of digits
+      let sum = sumOfInteger(integer);
+      console.log(`The sum of ${integer} is: ` + sum);
+    </script>
+  </body>
+</html>
